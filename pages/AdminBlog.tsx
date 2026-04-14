@@ -772,18 +772,20 @@ const AdminBlogEditor: React.FC<{
               </button>
             </div>
 
-            <div className="mt-8 rounded-[24px] border border-white/10 bg-white/[0.03] p-4 text-sm text-slate-400">
-              <div className="flex items-center gap-2 text-white">
+            <div className="mt-8 overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.03] p-4 text-sm text-slate-400">
+              <div className="flex min-w-0 items-center gap-2 text-white">
                 <FileText size={16} />
                 Current preview
               </div>
-              <p className="mt-3 font-semibold text-white">{draft.title || 'Untitled post'}</p>
-              <p className="mt-2 leading-6 text-slate-400">
+              <p className="safe-wrap mt-3 max-w-full overflow-hidden text-ellipsis font-semibold text-white">
+                {draft.title || 'Untitled post'}
+              </p>
+              <p className="safe-wrap line-clamp-4 mt-2 max-w-full overflow-hidden leading-6 text-slate-400">
                 {draft.excerpt || getPlainText(draft.contentHtml) || 'No excerpt yet.'}
               </p>
-              <div className="mt-4 flex items-center justify-between text-xs text-slate-500">
-                <span>{draft.authorName || 'Admin'}</span>
-                <span>{formatAdminDate(draft.publishedAt)}</span>
+              <div className="mt-4 flex min-w-0 items-center justify-between gap-3 text-xs text-slate-500">
+                <span className="safe-wrap min-w-0 flex-1">{draft.authorName || 'Admin'}</span>
+                <span className="shrink-0">{formatAdminDate(draft.publishedAt)}</span>
               </div>
             </div>
 

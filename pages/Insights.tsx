@@ -68,7 +68,7 @@ const Insights: React.FC = () => {
             News, analysis, and field updates
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-400">
-            Explore published articles, reports, and updates from DRSE.G. This section now reads directly from the Supabase-backed blog CMS.
+            Explore published articles, reports, and updates from DRSE.G.
           </p>
         </div>
 
@@ -137,12 +137,12 @@ const Insights: React.FC = () => {
                   <h2 className={`mt-4 font-display font-bold text-white transition group-hover:text-blue-100 ${isFeatured ? 'text-3xl md:text-4xl' : 'text-2xl'}`}>
                     {post.title}
                   </h2>
-                  <p className={`mt-4 leading-relaxed text-slate-400 ${isFeatured ? 'text-base' : 'text-sm'}`}>
+                  <p className={`line-clamp-4 mt-4 leading-relaxed text-slate-400 ${isFeatured ? 'text-base' : 'text-sm'}`}>
                     {getFallbackExcerpt(post)}
                   </p>
 
-                  <div className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-blue-200">
-                    Read article
+                  <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-blue-500/10 px-4 py-2 text-sm font-medium text-blue-100 transition group-hover:border-blue-300/30 group-hover:bg-blue-500/15">
+                    Read more
                     <ArrowUpRight size={16} />
                   </div>
                 </Link>
