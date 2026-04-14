@@ -1,0 +1,149 @@
+/* Global Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #020617;
+  color: white;
+  overflow-x: hidden;
+  font-family: 'Calibri', 'Segoe UI', 'Candara', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Canvas container for 3D background */
+#canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 3px;
+}
+
+/* Glass panel effect */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rich-editor:empty::before {
+  content: attr(data-placeholder);
+  color: #64748b;
+  pointer-events: none;
+}
+
+.rich-editor,
+.article-content {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  overflow-x: hidden;
+}
+
+.rich-editor *,
+.article-content * {
+  max-width: 100%;
+}
+
+.line-clamp-2,
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  -webkit-line-clamp: 3;
+}
+
+.rich-editor a,
+.article-content a {
+  color: #93c5fd;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.rich-editor ul,
+.article-content ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.rich-editor ol,
+.article-content ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+}
+
+.rich-editor blockquote,
+.article-content blockquote {
+  border-left: 3px solid rgba(59, 130, 246, 0.55);
+  margin: 1.25rem 0;
+  padding-left: 1rem;
+  color: #cbd5e1;
+}
+
+.rich-editor p + p,
+.article-content p + p,
+.article-content h2,
+.article-content h3,
+.article-content ul,
+.article-content ol,
+.article-content blockquote {
+  margin-top: 1rem;
+}
+
+.article-content {
+  color: #dbe4f0;
+  line-height: 1.9;
+}
+
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4 {
+  color: white;
+  font-family: Cambria, Georgia, serif;
+  line-height: 1.2;
+}
+
+.article-content h2 {
+  font-size: 2rem;
+}
+
+.article-content h3 {
+  font-size: 1.5rem;
+}
+
+.article-content img {
+  max-width: 100%;
+  border-radius: 24px;
+  margin-top: 1rem;
+}
